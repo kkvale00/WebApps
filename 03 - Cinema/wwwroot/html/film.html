@@ -1,0 +1,78 @@
+﻿<script>
+    var elencoFilm = [];
+
+    function stampaFilm() {
+
+        $.get("/Film/ElencoJSON").then(function (data) {
+
+            elencoFilm = data;
+            var ris = '<thead> < tr class="w3-light-grey" >' +
+                '<th>Titolo</th><th>Genere</th><th>Durata</th><th>Funzioni</th> </tr >' +
+                '</thead > ';
+
+            for (var i = 0; i < elencoFilm.length; i++) {
+                ris += "<tr>" +
+                    "<td>" + elencoFilm[i].titolo + "</td>" +
+                    "<td>" + elencoFilm[i].genere + "</td>" +
+                    "<td>" + elencoFilm[i].durata + "</td>" +
+                    "<td> <button class='dettaglifilm' idfilm=" + elencoFilm[i].id + "> Dettagli </button> </td>" +
+                    "</tr>";
+            }
+             
+            $("#elencofilm").html(ris);
+            $(".dettaglifilm").click(function () {
+
+                console.log("ecco a lei i dettagli del film con id " + $(this).attr("idfilm"));
+
+                //recuperare il film dall'array
+                var filmDaStampare = {};
+
+                for (var i = 0; i < elencoFilm.length; i++) 
+                    if (elencoFilm[i].id == $(this).attr("idfilm")) {
+                        filmDaStampare = elencoFilm[i];
+                        break;
+                    }
+                
+                //Creare una pagina per i dettagli del film
+                var pagina = `
+                            <h3> Benvenuto nella pagina dei dettagli del film numero [id] </h3>
+
+                            <h5> [titolo] - [genere] </h5>
+
+                            Trama : [trama] <br />
+
+                            Durata del film [durata]
+
+                            <img src="[locandina]" />
+                             `;
+
+                //Andiamo a rimpiazzare tutti i segnaposto:
+
+                //pagina = pagina.replace("[id]", filmDaStampare.id);
+                //pagina = pagina.replace("[titolo]", filmDaStampare.titolo);
+
+                for (var k in filmDaStampare)
+                    pagina = pagina.replace("[" + k + "]", filmDaStampare[k]);
+
+
+                $("#dettaglifilm").html(pagina);
+
+
+                //nascondere il div contenente l'elenco completo dei film
+                $("#film").hide(250);
+
+                //mostrare il div contenente i dettagli del film trovato
+                $("#dettaglifilm").show(225);
+            });
+
+        });//fine ajax film
+    }
+
+    stampaFilm();
+</script>
+
+<h3 class="w3-center">Elenco dei film</h3>
+<center>
+    <table id="elencofilm" class="w3-table-all w3-hoverable" style="width:70%">
+    </table>
+</center>

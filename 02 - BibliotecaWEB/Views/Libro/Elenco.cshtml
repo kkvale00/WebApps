@@ -1,0 +1,41 @@
+﻿@model List<_02___BibliotecaWEB.Models.Libro>
+
+<style>
+    h1 {
+        text-align: left;
+        text-transform: uppercase;
+        color: orange;
+        text-shadow: 2px 2px 5px black;
+        font-size: 250%;
+    }
+</style>
+
+<h1>Elenco dei Libri</h1>
+
+<h5>Numero dei Libri: @Model.Count</h5>
+
+@*<p>
+    Se vuoi aggiungere un nuovo libro <a href="/Libro/FormNuovoLibro">CLICCA QUI</a>
+</p>
+<hr />
+<br />*@
+
+@foreach (var lib in Model)
+{
+<div>
+    <p> Titolo : @lib.Titolo</p>
+    <p> Genere: @lib.Genere</p>
+    <p> Anno: @lib.Annopubblicazione</p>
+    <p> Lingua: @lib.Linguaoriginale</p>
+    <p> Copie: @lib.Copiemagazzino</p>
+    <p> Autore: <a href="/Autore/Cerca/@lib.Idautore">Scheda Autore</a> </p>
+    <br />
+
+    <p>
+        <a href="/Libro/FormModificaLibro/@lib.Id">Modifica</a>
+        <a href="/Libro/Delete/@lib.Id">Elimina</a>
+    </p>
+
+</div>
+    <br />
+}

@@ -1,0 +1,13 @@
+﻿@model _01___AziendaWeb.Models.Dipendente;
+
+<!--Con il comando a riga 1 faccio capire alla mia pagine che ricevera
+    un tipo Dipendente dal Model-->
+
+
+<h1>Dettagli del dipendente numero @Html.DisplayFor(model =>model.Id)</h1>
+
+<p>Nome: @Model.Nome </p>
+<p>Cognome: @Model.Cognome </p>
+<p>Date of birth: @Model.Dob.ToString("dd/MM/yyyy") </p>
+<p>Residenza: @Model.Residenza </p>
+<p>Reparto: @Model.Reparto </p>

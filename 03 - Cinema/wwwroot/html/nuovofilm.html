@@ -1,0 +1,77 @@
+﻿<script>
+    $("#salvaFilm").click(function () {
+
+        //Controllare che tutte le informazioni siano state inserite, in caso contrario
+        //lanciare un alert e bloccare la funzione
+
+        //Se tutti i dati vanno bene allora preparo la chiamata AJAX
+        var percorsoRequest =
+            "/Film/NuovoFilm?" +
+            "titolo=" + $("#titolofilm").val() + "&" +
+            "genere=" + $("#generefilm").val() + "&" +
+            "annouscita=" + $("#annouscitafilm").val() + "&" +
+            "trama=" + $("#tramafilm").val() + "&" +
+            "durata=" + $("#duratafilm").val() + "&" +
+            "vietato=" + $("#vietatofilm").val() + "&" +
+            "locandina=" + $("#locandinafilm").val();
+
+        //In base alla response ricevuta dalla chiamata AJAX segnalo l'Ok o l'errore all'utente
+        $.get(percorsoRequest).then(function (response) {
+
+            alert("bro ja davvero speravi funzionasse lol..ASPE INVECE" + response);
+
+            //una volta salvato, controllo con l'alert
+            //poi ricarico e faccio vdere l'elenco dei film
+            //nascnondo la pagina in cui mi trovo togliendo il form
+            //mostro l'elenco film aggiornato
+            stampaFilm();
+
+            $("#nuovofilm").hide(275);
+            $("#film").show(350);
+
+            $("#forminserimentofilm > input").val("");
+        });
+
+        //Se è andato tutto bene ricarico i film dal database e li mostro
+
+        //Altrimenti niente
+
+
+    });
+
+
+
+</script>
+
+<br />
+<div class="w3-container" id="forminserimentofilm">
+
+    <label class="w3-text-red"><b>Titolo</b></label>
+    <input class="w3-input w3-border" type="text" id="titolofilm" />
+
+    <label class="w3-text-red"><b>Genere</b></label>
+    <input class="w3-input w3-border" type="text" id="generefilm" />
+
+    <label class="w3-text-red"><b>Anno uscita</b></label>
+    <input class="w3-input w3-border" type="number" id="annouscitafilm" />
+
+    <label class="w3-text-red"><b>Trama</b></label>
+    <input class="w3-input w3-border" type="text" id="tramafilm" />
+
+    <label class="w3-text-red"><b>Durata</b></label>
+    <input class="w3-input w3-border" type="number" id="duratafilm" />
+
+    <label class="w3-text-red"><b>Vietato</b></label>
+    <select class="w3-input w3-border" type="text" id="vietatofilm" >
+        <option value="false">No</option>
+        <option value="true">Si</option>
+    </select>
+
+    <label class="w3-text-red"><b>URL locandina</b></label>
+    <input class="w3-input w3-border" type="text" id="locandinafilm" />
+
+    <br />
+
+    <button class="w3-btn w3-red" id="salvaFilm"> Salva </button>
+
+</div>

@@ -1,0 +1,41 @@
+﻿<head>
+    <style>
+        h2 {
+            width: 75%;
+            color: rgb(255, 105, 0,0.9);
+            font-weight: bold;
+            text-shadow: 2px 2px 5px black;
+            text-align:center;
+        }
+    </style>
+</head>
+    <h2>Elenco degli autori</h2>
+    <center>
+        <table id="elencoautore" class="w3-table-all w3-hoverable w3-center" style="width:70%">
+        </table>
+    </center>
+<script>
+    var elencoautore = [];
+
+    function stampautore() {
+
+        $.get("/Autore/ElencoJSON").then(function (data) {
+
+            elencoautore = data;
+            var ris = '<thead> < tr class="w3-light-grey" >' +
+                '<th>Nome</th><th>Nazione</th></tr >' +
+                '</thead > ';
+
+            for (var i = 0; i < elencoautore.length; i++) {
+                ris += "<tr>" +
+                    "<td>" + elencoautore[i].nome + "</td>" +
+                    "<td>" + elencoautore[i].nazione + "</td>" +
+
+                    "</tr>";
+            }
+
+            $("#elencoautore").html(ris);
+        });//fine ajax autore
+    }
+    stampautore();
+</script>

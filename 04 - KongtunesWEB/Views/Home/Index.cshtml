@@ -1,0 +1,73 @@
+﻿<head>
+    <!-- Importo la libreria jQuery, il nostro file JS e un CSS esterno-->
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/js/nostrum.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .barrablu {
+            background-color: rgb(255, 105, 0,0.7);
+        }
+
+        .barragrigia {
+            background-color: rgb(45, 45, 45,0.8);
+        }
+
+        .a {
+            color: white;
+        }
+
+        body {
+            background-image: url(https://wallpapercave.com/wp/wp3409426.jpg);
+        }
+
+        h1 {
+            width: 55%;
+            height: 35%;
+            padding: 120px;
+            margin: 0 auto;
+            color: rgb(255, 105, 0,0.9);
+            font-weight: bold;
+            text-shadow: 16px 16px 20px black;
+            font-size: 100px;
+            text-align: center;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        h4 {
+            width: 60%;
+            height: 40%;
+            padding: 230px;
+            margin: 0 auto;
+            color: white;
+            font-weight: bold;
+            text-shadow: 30px 30px 50px black;
+            font-size: 25px;
+            text-align: center;
+            font-family: oblique;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="w3-bar barragrigia a">
+        <a class="w3-bar-item w3-button bottonemenu barrablu" divDaAprire="home">Home</a>
+        <a class="w3-bar-item w3-button bottonemenu" divDaAprire="autore">Autore</a>
+        <a class="w3-bar-item w3-button bottonemenu" divDaAprire="album">Album</a>
+        <a class="w3-bar-item w3-button bottonemenu" divDaAprire="nuovoautore" style="float:right">Aggiungi Autore</a>
+        <a class="w3-bar-item w3-button bottonemenu" divDaAprire="nuovoalbum" style="float:right">Aggiungi Album</a>
+    </div>
+
+    <div class="pagina w3-center" id="home" >
+        <h1>BENVENUTO NELLA NOSTRA FONOTECA WEB!</h1>
+        <h4>Seleziona un Autore o un Album per continuare</h4>
+    </div>
+
+    <div id="autore" class="pagina" style="display:none"></div>
+
+    <div id="album" class="pagina" style="display:none"></div>
+
+    <div id="nuovoautore" class="pagina" style="display:none"></div>
+
+    <div id="nuovoalbum" class="pagina" style="display:none"></div>
+</body>
+    

@@ -1,0 +1,38 @@
+﻿@model List<_01___AziendaWeb.Models.Cliente>
+<link rel="stylesheet" href="/css/site.css" />
+
+@*<p>
+    <a href="/Home/Index">Torna alla HOME</a>
+</p>*@
+
+
+<h1>Elenco dei Clienti</h1>
+
+<h4>Numero di dipendenti: @Model.Count</h4> 
+
+@*<p>
+    <h2>Se vuoi aggiungere un nuovo cliente</h2>
+    <a href="/Cliente/FormNuovoCliente">CLICCA QUI SENZA FARE DOMANDE</a>
+</p>
+<hr />
+<br />*@
+
+
+
+@foreach (var cli in Model)
+{
+    <p>Nominativo: @cli.Nominativo </p>
+    <p>Partita Iva: @cli.Piva </p>
+    <p>Annofondazione: @cli.Annofondazione </p>
+    <p>Settore: @cli.Settore </p>
+    <p>Servizio Acquistato: @cli.Servizioacquistato </p>
+    <p>Capitale: @cli.Capitale </p>
+
+    <p>
+        <a href="/Cliente/FormModificaCliente/@cli.Id">Modifica</a>
+        <a href="/Cliente/Elimina/@cli.Id">Elimina</a>
+    </p>
+
+    <hr />
+    <br />
+}

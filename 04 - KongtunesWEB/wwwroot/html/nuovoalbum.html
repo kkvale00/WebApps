@@ -1,0 +1,60 @@
+﻿<style>
+    .gesu {
+        padding: 120px;
+        margin: 0 auto;
+    }
+    .size{
+        font-size:45px;
+
+
+    }
+</style>
+
+<script>
+    $("#salvalbum").click(function () {
+
+        //AJAX
+        var percorsoRequest =
+            "/Album/Nuovoalbum?" +
+            "nome=" + $("#nomealbum").val() + "&" +
+            "genere=" + $("#generealbum").val() + "&" +
+            "datapubblicazione=" + $("#datalbum").val() + "&" +
+            "idautore=" + $("#idautore").val();
+
+        $.get(percorsoRequest).then(function (response) {
+
+            alert("tutto ok, completasto" + response);
+
+            stampalbum();
+
+            $("#nuovoalbum").hide(275);
+            $("#album").show(350);
+
+            $("#forminserimentoalbum > input").val("");
+        });
+    });
+
+
+
+</script>
+
+<br />
+<div class="w3-container w3-center gesu" style="width:50%" id="forminserimentoalbum">
+
+    <label class="w3-text-orange size"><b>Nome</b></label>
+    <input class="w3-input w3-border" type="text" id="nomealbum" />
+
+    <label class="w3-text-orange size"><b>Genere</b></label>
+    <input class="w3-input w3-border" type="text" id="generealbum" />
+
+    <label class="w3-text-orange size"><b>Data di Pubblicazione</b></label>
+    <input class="w3-input w3-border" type="date" id="datalbum" />
+
+    <label class="w3-text-orange size"><b>Autore</b></label>
+    <input class="w3-input w3-border" type="text" id="idautore" />
+
+    <br />
+
+    <button class="w3-btn w3-orange size" id="salvalbum"> SALVA </button>
+
+</div>

@@ -1,0 +1,43 @@
+﻿@model List<_01___AziendaWeb.Models.Dipendente>
+
+
+@{ //All'interno di questo blocco di codice noi possiamo definire le proprietà
+   //della nostra pagina CSHTML
+   //Una di queste proprietà è il Layout ovvero lo scheletro che avrà la nostra pagina
+   //web. Dunque il contenuto della pagina Elenco.cshtml verrà circondato da tutto
+   //ciò che è presente in /Pages/Shared/_Layout.cshtml
+   Layout = "LayoutNostro";
+}
+
+
+@*<p>
+    <a href="/Home/Index">Torna alla HOME</a>
+</p>*@
+
+<h1>Elenco dei dipendenti</h1>
+
+<h4>Numero di dipendenti: @Model.Count</h4>
+
+@*<p>
+    <h2>Se vuoi aggiungere un nuovo dipendente</h2>
+    <a href="/Dipendente/FormNuovoDipendente">CLICCA QUI SENZA FARE DOMANDE</a>
+</p>
+<hr />
+<br />*@
+
+@foreach (var dip in Model)
+{
+    <p> Nome : @dip.Nome</p>
+    <p> Cognome: @dip.Cognome</p>
+    <p> Date of birth: @dip.Dob.ToString("dd/MM/yyyy")</p>
+    <p> Reparto: @dip.Reparto</p>
+    <p> Residenza: @dip.Residenza</p>
+
+    <p>
+        <a href="/Dipendente/FormModificaDipendente/@dip.Id">Modifica</a>
+        <a href="/Dipendente/Elimina/@dip.Id">Elimina</a>
+    </p>
+
+    <hr />
+    <br />
+}

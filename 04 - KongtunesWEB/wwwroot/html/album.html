@@ -1,0 +1,44 @@
+﻿<head>
+    <style>
+        h2 {
+            width: 75%;
+            color: rgb(255, 105, 0,0.9);
+            font-weight: bold;
+            text-shadow: 2px 2px 5px black;
+            text-align:center;
+        }
+    </style>
+</head>
+    <h2>Elenco degli album</h2>
+    <center>
+        <table id="elencoalbum" class="w3-table-all w3-hoverable" style="width:70%">
+        </table>
+    </center>
+
+<script>
+    var elencoalbum = [];
+
+    function stampalbum() {
+
+        $.get("/Album/ElencoJSON").then(function (data) {
+
+            elencoalbum = data;
+            var ris = '<thead> < tr class="w3-light-grey" >' +
+                '<th>Nome</th><th>Genere</th><th>Data</th><th>Idautore</th></tr >' +
+                '</thead > ';
+
+            for (var i = 0; i < elencoautore.length; i++) {
+                ris += "<tr>" +
+                    "<td>" + elencoalbum[i].nome + "</td>" +
+                    "<td>" + elencoalbum[i].genere + "</td>" +
+                    "<td>" + elencoalbum[i].datapubblicazione.split('T')[0] + "</td>" +
+                    "<td>" + elencoalbum[i].idautore + "</td>" +
+
+                    "</tr>";
+            }
+
+            $("#elencoalbum").html(ris);
+        });//fine ajax autore
+    }
+    stampalbum();
+</script>

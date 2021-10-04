@@ -1,0 +1,113 @@
+﻿<html>
+<head>
+    <title>BibliotecaWeb</title>
+
+    <style>
+        input[type=text], input[type=number], input[type=date] {
+            width: 25%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 25%;
+            background-color: rgb(255, 194, 0,0.6);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        body {
+            background-image: url("https://i.pinimg.com/originals/bc/f1/48/bcf148e2b1ef141dfe7cb892453138f7.png");
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-size: 29%;
+            background-attachment: fixed;
+            background-color: rgba(255, 255, 0, 0.2);
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: sticky;
+        }
+
+        li {
+            float: left;
+            border-right: 1px solid #bbb;
+        }
+
+        li:last-child {
+            border-right: none;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 12px 14px;
+            text-decoration: none;
+            
+        }
+        p {
+            border-color: rgba(255, 255, 0, 0.2);
+            border-style: dotted;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #04AA6D;
+        }
+
+        div {
+            font-weight: bold;
+            width: 13%;
+            padding: 4px 8px;
+            background-color: rgba(255, 255, 0, 0.1);
+            border-top-style: dotted;
+            border-right-style: dotted;
+            border-bottom-style: dotted;
+            border-left-style: dotted;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li>
+            <a href="/Home/Index">Home</a>
+        </li>
+        <li>
+            <a href="/Autore/Elenco">Elenco Autori</a>
+        </li>
+        <li>
+            <a href="/Libro/Elenco">Elenco Libri</a>
+        </li>
+        <li style="float:right">
+            <a href="/Autore/FormNuovoAutore">Aggiungi nuovo Autore</a>
+        </li>
+        <li style="float:right">
+            <a href="/Libro/FormNuovoLibro">Aggiungi nuovo Libro </a>
+
+        </li>
+    </ul>
+
+    @RenderBody()
+
+</body>
+
+</html>

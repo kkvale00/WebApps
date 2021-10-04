@@ -1,0 +1,18 @@
+
+PS C:\Users\kkvale\source\repos\WebApps> ls
+
+
+    Directory: C:\Users\kkvale\source\repos\WebApps
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          20/09/21     14:32                01 - AziendaWeb
+d-----          20/09/21     09:16                WebApps
+-a----          20/09/21     12:17         622407 webapp paint rulez.png
+-a----          20/09/21     10:59           1151 WebApps.sln
+
+
+PS C:\Users\kkvale\source\repos\WebApps> ^C
+PS C:\Users\kkvale\source\repos\WebApps> cd '.\01 - AziendaWeb\'
+PS C:\Users\kkvale\source\repos\WebApps\01 - AziendaWeb> dotnet watch run

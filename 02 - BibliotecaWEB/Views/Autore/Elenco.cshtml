@@ -1,0 +1,40 @@
+﻿@model List<_02___BibliotecaWEB.Models.Autore>
+
+<style>
+    h1 {
+        text-align: left;
+        text-transform: uppercase;
+        color: orange;
+        text-shadow: 2px 2px 5px black;
+        font-size: 250%;
+    }
+</style>
+
+<h1>Elenco degli autori</h1>
+
+<h5>Numero degli autori: @Model.Count</h5>
+
+@*<p>
+    Se vuoi aggiungere un nuovo autore <a href="/Autore/FormNuovoAutore">CLICCA QUI</a>
+</p>
+<hr />
+<br />*@
+
+
+@foreach (var aut in Model)
+{
+<div>
+    <p> Nome : @aut.Nome</p>
+    <p> Cognome: @aut.Cognome</p>
+    <p> Date of birth: @aut.Dob.ToString("dd/MM/yyyy")</p>
+    <p> Nazione: @aut.Nazione</p>
+
+
+    <p>
+        <a href="/Autore/FormModificaAutore/@aut.Id">Modifica</a>
+        <a href="/Autore/Delete/@aut.Id">Elimina</a>
+    </p>
+
+</div>
+    <br />
+}

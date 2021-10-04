@@ -1,0 +1,56 @@
+﻿<script>
+    $("#salvautente").click(function () {
+
+        //AJAX
+        var percorsoRequest =
+            "/Utente/Nuovoutente?" +
+            "username=" + $("#usernameutente").val() + "&" +
+            "passowrd" + $("#passwordutente").val() + "&" +
+            "nome=" + $("#nomeutente").val() + "&" +
+            "cognome=" + $("#cognomeutente").val() + "&" +
+            "dob=" + $("#dobutente").val() + "&" +
+            "residenza=" + $("#residenzautente").val();
+
+        $.get(percorsoRequest).then(function (response) {
+
+            alert("bro ja davvero speravi funzionasse lol..ASPE INVECE VA" + response);
+
+            stampaUtente();
+
+            $("#nuovoutente").hide(275);
+            $("#utente").show(350);
+
+            $("#forminserimentoutente > input").val("");
+        });
+    });
+
+
+
+</script>
+
+<br />
+<div class="w3-container" id="forminserimentoutente">
+
+    <label class="w3-text-red"><b>Username</b></label>
+    <input class="w3-input w3-border" type="text" id="usernameutente" />
+
+    <label class="w3-text-red"><b>Passoword</b></label>
+    <input class="w3-input w3-border" type="password" id="passowrdutente" />
+
+    <label class="w3-text-red"><b>Nome</b></label>
+    <input class="w3-input w3-border" type="text" id="nomeutente" />
+
+    <label class="w3-text-red"><b>Cognome</b></label>
+    <input class="w3-input w3-border" type="text" id="cognomeutente" />
+    
+    <label class="w3-text-red"><b>Data di Nascita</b></label>
+    <input class="w3-input w3-border" type="date" id="dobutente" />
+
+    <label class="w3-text-red"><b>Residenza</b></label>
+    <input class="w3-input w3-border" type="text" id="residenzautente" />
+
+    <br />
+
+    <button class="w3-btn w3-red" id="salvautente"> Salva </button>
+
+</div>
