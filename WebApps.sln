@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03 - Cinema", "03 - Cinema\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04 - KongtunesWEB", "04 - KongtunesWEB\04 - KongtunesWEB.csproj", "{3013357A-43B5-4EE8-A1DD-2F47D41A5490}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05 - DummyAPI", "05 - DummyAPI\05 - DummyAPI.csproj", "{183D3A15-BACE-4418-BF33-092516CC8FFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05 - DummyAPI", "05 - DummyAPI\05 - DummyAPI.csproj", "{183D3A15-BACE-4418-BF33-092516CC8FFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
