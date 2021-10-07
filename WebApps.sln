@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04 - KongtunesWEB", "04 - K
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05 - DummyAPI", "05 - DummyAPI\05 - DummyAPI.csproj", "{183D3A15-BACE-4418-BF33-092516CC8FFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00 - esempi", "00 - esempi\00 - esempi.csproj", "{E109BBF1-093D-4477-B13E-BB9348084148}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "00 - esempi", "00 - esempi\00 - esempi.csproj", "{E109BBF1-093D-4477-B13E-BB9348084148}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06 - HunterxHunterAPI", "06 - HunterxHunterAPI\06 - HunterxHunterAPI.csproj", "{35D8FB9A-DB1A-47D9-8478-CC4583F92BE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{E109BBF1-093D-4477-B13E-BB9348084148}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E109BBF1-093D-4477-B13E-BB9348084148}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E109BBF1-093D-4477-B13E-BB9348084148}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35D8FB9A-DB1A-47D9-8478-CC4583F92BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35D8FB9A-DB1A-47D9-8478-CC4583F92BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35D8FB9A-DB1A-47D9-8478-CC4583F92BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35D8FB9A-DB1A-47D9-8478-CC4583F92BE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
