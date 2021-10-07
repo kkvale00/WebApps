@@ -5,5 +5,11 @@
     <RootNamespace>_06___HunterxHunterAPI</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="Utility">
+      <HintPath>..\..\SestaSettimana\Utility\bin\Debug\netcoreapp3.1\Utility.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 
 </Project>

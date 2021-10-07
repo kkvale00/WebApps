@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
-namespace _06___HunterxHunterAPI.Models
+using Utility;
+namespace _06___DragonBallAPI.Models
 {
-    public class Character
+    public class Character : Entity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public int Power { get; set; }
         public DateTime Dob { get; set; }

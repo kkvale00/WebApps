@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05 - DummyAPI", "05 - Dummy
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "00 - esempi", "00 - esempi\00 - esempi.csproj", "{E109BBF1-093D-4477-B13E-BB9348084148}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06 - HunterxHunterAPI", "06 - HunterxHunterAPI\06 - HunterxHunterAPI.csproj", "{35D8FB9A-DB1A-47D9-8478-CC4583F92BE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06 - DragonBallAPI", "06 - HunterxHunterAPI\06 - DragonBallAPI.csproj", "{35D8FB9A-DB1A-47D9-8478-CC4583F92BE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
