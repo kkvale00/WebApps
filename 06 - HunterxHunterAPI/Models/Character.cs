@@ -10,5 +10,9 @@ namespace _06___DragonBallAPI.Models
         public string Name { get; set; }
         public int Power { get; set; }
         public DateTime Dob { get; set; }
+
+        //public string Data{ get { return Dob.ToShortDateString(); }  }
+
+
     }
 }

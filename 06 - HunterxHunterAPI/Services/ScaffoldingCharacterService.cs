@@ -20,13 +20,13 @@ namespace _06___DragonBallAPI.Services
 
         public List<Character> GetAll()
         {
-            List<Character> ris = new List<Character>();
+            var ris = new List<Character>();
 
             string query = "select * from characters";
 
             List<Dictionary<string, string>> righe = db.Read(query);
 
-            foreach (Dictionary<string, string> riga in righe)
+            foreach (var riga in righe)
             {
                 Character c = new Character();
                 c.FromDictionary(riga);
@@ -64,7 +64,7 @@ namespace _06___DragonBallAPI.Services
 
         public void UpdateCharacter(int id, Character c)
         {
-            string query = $"update characters set name = '{c.Name}',power = {c.Power},dob = '{c.Dob.Year}-{c.Dob.Month}-{c.Dob.Day}'";
+            string query = $"update characters set name = '{c.Name}',power = {c.Power},dob = '{c.Dob.Year}-{c.Dob.Month}-{c.Dob.Day}' where id = {id}";
 
             db.Update(query);
         }
