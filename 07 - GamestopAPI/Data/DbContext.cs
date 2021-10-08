@@ -25,6 +25,20 @@ namespace _07___GamestopAPI.Data
         {
             return _videogames;
         }
+        public List<Videogame> FindByTitle(string title)
+        {
+            var ris = new List<Videogame>();
+
+            foreach (var t in _videogames)
+                if (t.Title == title)
+                {
+                    ris.Add(t);
+                }
+                else
+                    return null;
+
+            return ris;
+        }
 
 
 
