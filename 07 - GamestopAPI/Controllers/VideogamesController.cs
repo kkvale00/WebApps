@@ -1,6 +1,8 @@
-﻿using _07___GamestopAPI.Services;
+﻿using _07___GamestopAPI.Models;
+using _07___GamestopAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,7 @@ namespace _07___GamestopAPI.Controllers
     public class VideogamesController : ControllerBase
     {
         private readonly IVideogameService _videogameService;
+        private readonly ILogger<VideogamesController> _logger;
 
         /*why costruttore
          * cosi come abbiamo dovuto passare la sua dipendenza rispetto al DbContext
@@ -20,12 +23,21 @@ namespace _07___GamestopAPI.Controllers
          * Non deve essere il controller a crearsi in modo ajtonomo la dipendenza,
          * ma farselo passare dal costruttore
          */
-        public VideogamesController(IVideogameService videogameService)
+        public VideogamesController(IVideogameService videogameService,
+            ILogger<VideogamesController> logger)
         {
+            //dependency injection: la possibilita di fornire in qualche modo
+            //le dipendenze dell'oggetto(tramite costruttore)
             _videogameService = videogameService;
+            _logger = logger;            
         }
 
-
+        [HttpGet]
+        public List<Videogame> GetAll()
+        {
+            _logger.LogInformation("chiamata http su videogames");
+            return _videogameService.GetAll();
+        }
 
 
     }

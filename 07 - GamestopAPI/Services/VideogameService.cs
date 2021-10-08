@@ -28,7 +28,7 @@ namespace _07___GamestopAPI.Services
 
         public List<Videogame> GetAll()
         {
-            throw new NotImplementedException();
+            return _ctx.FindAll();
         }
 
         public List<Videogame> GetAllByTitle(string title)

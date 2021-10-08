@@ -15,7 +15,11 @@ namespace _07___GamestopAPI.Data
          */
         private List<Videogame> _videogames = new List<Videogame>
         {
-            new Videogame{Id=1,Title="The Legend of Zelda"}
+            new Videogame{Id=1,Title="The Legend of Zelda"},
+            new Videogame{Id=2,Title="Pokemon Platino"},
+            new Videogame{Id=3,Title="Dragonball Budokai Tenkaichi 3"},
+            new Videogame{Id=4,Title="GTA San Andreas"},
+            new Videogame{Id=5,Title="Red Dead Redemption"}
         };
         public List<Videogame> FindAll()
         {
