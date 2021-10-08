@@ -33,7 +33,12 @@ namespace _07___GamestopAPI.Services
 
         public List<Videogame> GetAllByTitle(string title)
         {
-            throw new NotImplementedException();
+            return _ctx.FindAll()
+                            .Where
+                            (
+                                v => v.Title.ToLower().Contains(title.ToLower())
+                            )
+                            .ToList();
         }
     }
 }

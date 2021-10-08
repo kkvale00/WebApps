@@ -33,12 +33,18 @@ namespace _07___GamestopAPI.Controllers
         }
 
         [HttpGet]
-        public List<Videogame> GetAll()
+        public List<Videogame> GetAll([FromQuery] string title) //videogames?title=pippo
         {
-            _logger.LogInformation("chiamata http su videogames");
-            return _videogameService.GetAll();
+            if (string.IsNullOrEmpty(title))
+            {
+                //verifico cosa sta succedno nell'app
+                _logger.LogInformation("chiamata http GET su videogames");
+                return _videogameService.GetAll();
+            }
+            
+            _logger.LogInformation("chiamata http GET con query {Title}", title);
+            return _videogameService.GetAllByTitle(title);
         }
-
 
     }
 }
