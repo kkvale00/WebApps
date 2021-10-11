@@ -30,8 +30,9 @@ namespace _09___PokemonAPI.Services
             {
                 Pokemon p = new Pokemon();
                 p.FromDictionary(riga);
-
                 ris.Add(p);
+
+
             }
             return ris;
         }
