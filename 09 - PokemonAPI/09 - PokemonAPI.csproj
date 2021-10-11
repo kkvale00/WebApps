@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="Utility">
       <HintPath>..\..\SestaSettimana\Utility\bin\Debug\netcoreapp3.1\Utility.dll</HintPath>
     </Reference>

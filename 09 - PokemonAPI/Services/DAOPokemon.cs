@@ -8,10 +8,10 @@ namespace _09___PokemonAPI.Services
 {
     public class DAOPokemon
     {
-        private Database db;
-        private static DAOPokemon _instance;
+        public Database db;
+        public static DAOPokemon _instance;
 
-        private DAOPokemon() { db = new Database("pokemon"); }
+        public DAOPokemon() { db = new Database("pokemon"); }
 
         public static DAOPokemon GetInstance()
         {
@@ -22,7 +22,12 @@ namespace _09___PokemonAPI.Services
         {
             var ris = new List<Pokemon>();
 
-            var query = "select * from pokemons";
+            var query = 
+            "select pokemons.id,pokemons.name,pokemons.weigth,pokemons.generationid as generation,types.type as pokemontype," +
+            "moves.name as move,moves.type as movetype, moves.power,moves.specialeffects from pokemons inner join pokemontypes " +
+            "on pokemons.id=pokemontypes.pokemonid inner join types on pokemontypes.typeid=types.id inner join pokemonmoveset on " +
+            "pokemons.id=pokemonmoveset.pokemonid inner join moves on pokemonmoveset.moveid = moves.id;";
+            
 
             List<Dictionary<string, string>> righe = db.Read(query);
 
@@ -47,7 +52,7 @@ namespace _09___PokemonAPI.Services
             return c;
         }
 
-        public void AddCharacter(Pokemon p)
+        public void Add(Pokemon p)
         {
             var query =
                  $"insert into pokemons (name,weigth,generation,type) values" +
@@ -59,5 +64,16 @@ namespace _09___PokemonAPI.Services
         {
             db.Update($"delete from pokemons where id = {id}");
         }
+
+        public void Update(int id,Pokemon p)
+        {
+            var query = $"update pokemons set name = '{p.Name}', {p.Weigth}, '{p.Generation}' where id = {id}; ";
+
+
+            db.Update(query);
+
+
+        }
+
     }
 }
