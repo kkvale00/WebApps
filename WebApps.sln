@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07 - GamestopAPI", "07 - Ga
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08 - LibreriaAlice", "08 - LibreriaAlice\08 - LibreriaAlice.csproj", "{CD7895E0-168B-47FF-9338-DDE25CBA042A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09 - PokemonAPI", "09 - PokemonAPI\09 - PokemonAPI.csproj", "{208DD816-802A-434A-9192-02D17290BD92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{CD7895E0-168B-47FF-9338-DDE25CBA042A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD7895E0-168B-47FF-9338-DDE25CBA042A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD7895E0-168B-47FF-9338-DDE25CBA042A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{208DD816-802A-434A-9192-02D17290BD92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{208DD816-802A-434A-9192-02D17290BD92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{208DD816-802A-434A-9192-02D17290BD92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{208DD816-802A-434A-9192-02D17290BD92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
