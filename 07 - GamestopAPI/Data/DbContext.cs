@@ -30,7 +30,7 @@ namespace _07___GamestopAPI.Data
             var ris = new List<Videogame>();
 
             foreach (var t in _videogames)
-                if (t.Title.Contains(title))
+                if (t.Title == title)
                 {
                     ris.Add(t);
                 }
@@ -39,5 +39,8 @@ namespace _07___GamestopAPI.Data
 
             return ris;
         }
+
+           
+        
     }
 }
