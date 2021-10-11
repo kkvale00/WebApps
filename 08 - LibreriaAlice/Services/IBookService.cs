@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _08___LibreriaAlice.Services
 {
-    public interface ILibroService
+    public interface IBookService
     {
         public List<Book> List();
         public Book Search(int id);

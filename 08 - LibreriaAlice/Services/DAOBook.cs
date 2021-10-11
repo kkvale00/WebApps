@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _08___LibreriaAlice.Services
 {
-    public class DAOBook : ILibroService
+    public class DAOBook : IBookService
     {
         public List<Book> books = new List<Book>
         {
