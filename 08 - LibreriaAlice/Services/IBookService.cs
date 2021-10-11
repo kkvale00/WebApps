@@ -11,7 +11,7 @@ namespace _08___LibreriaAlice.Services
         public List<Book> List();
         public Book Search(int id);
         public void Add(Book l);
-        public void Update(Book l);
+        public void Update(int id, Book l);
         public void Delete(int id);
 
 

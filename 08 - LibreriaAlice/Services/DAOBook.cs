@@ -40,9 +40,9 @@ namespace _08___LibreriaAlice.Services
             return books.Where(l => l.Id == id).FirstOrDefault();
         }
 
-        public void Update(Book l)
+        public void Update(int id, Book l)
         {
-            var index = books.FindIndex(b => b.Id == l.Id);
+            var index = books.FindIndex(b => b.Id == id);
 
             books[index] = l;
         }

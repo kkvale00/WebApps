@@ -1,3 +1,4 @@
+using _08___LibreriaAlice.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +27,11 @@ namespace _08___LibreriaAlice
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //prima interfaccia, poi classe
+            //dependency injection,
+            //pattern per evitare il singleton sia in DAO che nelle interfacce
+            services.AddSingleton<IBookService,DAOBook>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
