@@ -30,6 +30,17 @@ namespace _07___GamestopAPI.Data
             var ris = new List<Videogame>();
 
             foreach (var t in _videogames)
+                if (t.Title == title)
+                {
+                    ris.Add(t);
+                }
+                else
+                    return null;
+
+            return ris;
+        }
+
+            foreach (var t in _videogames)
                 if (t.Title.Contains(title))
                 {
                     ris.Add(t);
