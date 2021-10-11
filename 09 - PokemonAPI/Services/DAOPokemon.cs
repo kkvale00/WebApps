@@ -22,12 +22,7 @@ namespace _09___PokemonAPI.Services
         {
             var ris = new List<Pokemon>();
 
-            var query = 
-            "select pokemons.id,pokemons.name,pokemons.weigth,pokemons.generationid as generation,types.type as pokemontype," +
-            "moves.name as move,moves.type as movetype, moves.power,moves.specialeffects from pokemons inner join pokemontypes " +
-            "on pokemons.id=pokemontypes.pokemonid inner join types on pokemontypes.typeid=types.id inner join pokemonmoveset on " +
-            "pokemons.id=pokemonmoveset.pokemonid inner join moves on pokemonmoveset.moveid = moves.id;";
-            
+            var query = "select * from pokemon";
 
             List<Dictionary<string, string>> righe = db.Read(query);
 
