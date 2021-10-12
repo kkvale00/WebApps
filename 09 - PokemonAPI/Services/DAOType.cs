@@ -1,4 +1,5 @@
 ﻿using _09___PokemonAPI.Models;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,18 @@ namespace _09___PokemonAPI.Services
 {
     public class DAOType
     {
-        private Database db;
         private static DAOType _instance;
+        private Database db;
 
+        /*ci richiamo l'iconfig per importante il database, dopo aver creato DB
+         * 
+        protected readonly Database db;
+        public DAOType(IConfiguration config)
+        {
+            db = new Database(config["Db:Name"]);
+        }
+
+        */
         private DAOType() { db = new Database("pokemon"); }
 
         public static DAOType GetInstance()
@@ -19,6 +29,27 @@ namespace _09___PokemonAPI.Services
         }
 
 
+
+
+        /*alternative List GetAll()
+         * public list<pokemontype
+         *         public List<Types> GetAll()
+        {
+            var results = db.Read("select * from types;");
+            return results.Select(result => FromDictionary(result)).ToList();
+        }
+
+        private Types FromDictionary(Dictionary<string, string> result)
+        {
+            if (result is null)
+            {
+                return null;
+            }
+            return new Types { Id = int.Parse(result["id"]), Typ = result["type"] };
+        }
+         * 
+         * 
+         */
         public List<Types> GetAll()
         {
             var ris = new List<Types>();
@@ -36,8 +67,20 @@ namespace _09___PokemonAPI.Services
             }
             return ris;
         }
+        /*
+         * alternative to getbyid
+         *         public Types GetById(int id)
+        {
+            return FromDictionary(
 
-        public Types GetByID(int id)
+                db.ReadOne($"SELECT * FROM types WHERE id = {id};";
+                
+                );
+
+
+         */
+
+         public Types GetByID(int id)
         {
             var query = $"select * from types where id = {id} ";
 
@@ -70,6 +113,7 @@ namespace _09___PokemonAPI.Services
             db.Update(query);
 
         }
-
     }
+
+    
 }
