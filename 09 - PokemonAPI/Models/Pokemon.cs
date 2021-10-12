@@ -10,8 +10,8 @@ namespace _09___PokemonAPI.Models
         public string Name { get; set; }
         public double Weigth { get; set; }
         public Generation Generation { get; set; }
-        public Types[] Types { get; set; }
-        public Move[] Moves { get; set; }
+        public List<Types> Types { get; set; }
+        public List<Move> Moves { get; set; }
 
 
 

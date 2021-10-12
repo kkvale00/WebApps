@@ -2,7 +2,6 @@
 using _09___PokemonAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,43 +11,45 @@ namespace _09___PokemonAPI.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class PokemonController : ControllerBase
+    public class MoveController : ControllerBase
     {
-        private readonly DAOPokemon _daop;
+        private readonly DAOMove _daom;
 
-        public PokemonController(DAOPokemon d)
+        public MoveController(DAOMove m)
         {
-            _daop = d;
+            _daom = m;
         }
 
         [HttpGet]
-        public List<Pokemon> GetAll()
+        public List<Move> GetAll()
         {
-            return _daop.GetAll();
+            return _daom.GetAll();
         }
 
         [HttpGet("{id}")]
-        public Pokemon GetById([FromRoute] int id)
+        public Move GetById([FromRoute] int id)
         {
-            return _daop.GetByID(id);
+            return _daom.GetByID(id);
         }
 
         [HttpPost]
-        public void Add([FromBody] Pokemon p)
+        public void Add([FromBody] Move m)
         {
-            _daop.Add(p);
+            _daom.Add(m);
         }
 
         [HttpDelete("{id}")]
         public void Delete([FromRoute] int id)
         {
-            _daop.Delete(id);
+            _daom.Delete(id);
         }
 
         [HttpPut("{id}")]
-        public void Update([FromRoute] int id, [FromBody] Pokemon p)
+        public void Update([FromRoute] int id, [FromBody] Move m)
         {
-            _daop.Update(id, p);
+            _daom.Update(id, m);
         }
+
+
     }
 }

@@ -9,7 +9,7 @@ namespace _09___PokemonAPI.Models
     public class Move : Entity
     {
         public string Name { get; set; }
-        public string Type { get; set; }
+        public string Movetype { get; set; }
         public int Power { get; set; }
         public string SpecialEffects { get; set; }
 

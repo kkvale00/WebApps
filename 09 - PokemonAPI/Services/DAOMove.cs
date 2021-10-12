@@ -47,11 +47,11 @@ namespace _09___PokemonAPI.Services
             return m;
         }
 
-        public void AddCharacter(Move m)
+        public void Add(Move m)
         {
             var query =
                  $"insert into moves (name,type,power,specialeffects) values" +
-                 $"('{m.Name}','{m.Type}',{m.Power},'{m.SpecialEffects}');";
+                 $"('{m.Name}','{m.Movetype}',{m.Power},'{m.SpecialEffects}');";
             db.Update(query);
         }
 
@@ -60,6 +60,14 @@ namespace _09___PokemonAPI.Services
             db.Update($"delete from moves where id = {id}");
         }
 
+        public void Update(int id, Move m)
+        {
 
+            var query = $"update moves set name = '{m.Name}',type ='{m.Movetype}'," +
+                $"power = {m.Power},specialeffects = '{m.SpecialEffects}' where id = {id};";
+
+            db.Update(query);
+
+        }
     }
 }

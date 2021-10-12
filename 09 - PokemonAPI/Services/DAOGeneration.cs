@@ -49,7 +49,7 @@ namespace _09___PokemonAPI.Services
             return g;
         }
 
-        public void AddCharacter(Generation g)
+        public void Add(Generation g)
         {
             var query =
                  $"insert into generations (generation) values" +
@@ -62,7 +62,14 @@ namespace _09___PokemonAPI.Services
             db.Update($"delete from types where id = {id}");
         }
 
+        public void Update(int id, Generation g)
+        {
 
+            var query = $"update generations set generation = '{g.Generations}' where id = {id};";
+
+            db.Update(query);
+
+        }
 
 
     }

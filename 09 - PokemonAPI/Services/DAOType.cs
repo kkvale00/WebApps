@@ -49,7 +49,7 @@ namespace _09___PokemonAPI.Services
             return t;
         }
 
-        public void AddCharacter(Types t)
+        public void Add(Types t)
         {
             var query =
                  $"insert into types (type) values" +
@@ -60,6 +60,15 @@ namespace _09___PokemonAPI.Services
         public void Delete(int id)
         {
             db.Update($"delete from types where id = {id}");
+        }
+
+        public void Update(int id, Types t)
+        {
+
+            var query = $"update types set type = '{t.Typ}' where id = {id};";
+
+            db.Update(query);
+
         }
 
     }
