@@ -44,6 +44,7 @@ namespace _11___EntityFrameworkEX
             //fornbire attraverso la DI, un oggetto (Singleton) dell'interface
             //dichiarata come <Primo Generic, Second Generic>();
             services.AddScoped<ISuperHeroService, SuperHeroService>();
+            services.AddScoped<IMovesService, MovesService>();
             // i services chef anno uso del DataCOntext non devono essere agigunti
             // come singletone, bensi SCOPED, altrimenti il framework andra in eccezione
             // dato che nonpuo  fornire alla creazione di un singleton un oggetto(DataContext)

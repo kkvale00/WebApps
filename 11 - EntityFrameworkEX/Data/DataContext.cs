@@ -28,6 +28,7 @@ namespace _11___EntityFrameworkEX.Data
         public DbSet<SuperHero> SuperHeroes { get; set; }
         // per ogni modello su cui abbiamo bisogno di far persistenza
         // bastera definire un'altra proprieta DbSet<ClasseModello> per ogni classe
+        public DbSet<Moves> Moveset{ get; set; }
 
     }
 }

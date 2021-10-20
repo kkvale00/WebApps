@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace _11___EntityFrameworkEX.Models
 {
-    public class SuperHero
+    public class Moves
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Strength { get; set; }
-        public bool CanFly { get; set; }
-        public List<Moves> Moveset { get; set; }
+        public int Power { get; set; }
+        public string Description { get; set; }
+        public int SuperheroID { get; set; }
     }
 }

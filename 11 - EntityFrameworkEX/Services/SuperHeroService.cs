@@ -1,5 +1,6 @@
 ﻿using _11___EntityFrameworkEX.Data;
 using _11___EntityFrameworkEX.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,8 +51,8 @@ namespace _11___EntityFrameworkEX.Services
         {
             //questa proprieta, recuperata dall datacontext, ci permette
             //di effettuare le varie operazioni sugli oggetti SUPERHEROES
-            
-            return _ctx.SuperHeroes.ToList();
+
+            return _ctx.SuperHeroes.Include(p => p.Moveset).ToList();
             // dal DBSet uso il metodo ToList()
             // che effettua una select dal DB
             // e restituisce la lista degli oggetti
