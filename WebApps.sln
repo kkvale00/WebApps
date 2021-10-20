@@ -25,7 +25,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08 - LibreriaAlice", "08 - 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09 - PokemonAPI", "09 - PokemonAPI\09 - PokemonAPI.csproj", "{208DD816-802A-434A-9192-02D17290BD92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10 - PokemonAPILite", "10 - PokemonAPILite\10 - PokemonAPILite.csproj", "{01E060DF-9AD4-46E4-89B5-64378A7467C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10 - PokemonAPILite", "10 - PokemonAPILite\10 - PokemonAPILite.csproj", "{01E060DF-9AD4-46E4-89B5-64378A7467C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10.1 - PokemonAPIv3", "10.1 - PokemonAPIv3\10.1 - PokemonAPIv3.csproj", "{627A6E97-C801-4D89-B9B8-D339314BF454}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "002 - Reflection", "002 - Reflection\002 - Reflection.csproj", "{224E3191-E59F-4519-B3DC-AE6E3A7ED896}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11 - EntityFrameworkEX", "11 - EntityFrameworkEX\11 - EntityFrameworkEX.csproj", "{10A3A5E0-1893-4E4D-8E81-C80A9ED08F04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +87,18 @@ Global
 		{01E060DF-9AD4-46E4-89B5-64378A7467C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01E060DF-9AD4-46E4-89B5-64378A7467C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01E060DF-9AD4-46E4-89B5-64378A7467C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{627A6E97-C801-4D89-B9B8-D339314BF454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{627A6E97-C801-4D89-B9B8-D339314BF454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{627A6E97-C801-4D89-B9B8-D339314BF454}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{627A6E97-C801-4D89-B9B8-D339314BF454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{224E3191-E59F-4519-B3DC-AE6E3A7ED896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{224E3191-E59F-4519-B3DC-AE6E3A7ED896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{224E3191-E59F-4519-B3DC-AE6E3A7ED896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224E3191-E59F-4519-B3DC-AE6E3A7ED896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10A3A5E0-1893-4E4D-8E81-C80A9ED08F04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10A3A5E0-1893-4E4D-8E81-C80A9ED08F04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10A3A5E0-1893-4E4D-8E81-C80A9ED08F04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10A3A5E0-1893-4E4D-8E81-C80A9ED08F04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

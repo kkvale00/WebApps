@@ -1,4 +1,4 @@
-using _06___DragonBallAPI.Services;
+using _10._1___PokemonAPIv3.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,12 +7,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace _06___HunterxHunterAPI
+namespace _10._1___PokemonAPIv3
 {
     public class Startup
     {
@@ -26,12 +27,12 @@ namespace _06___HunterxHunterAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Bisona abilitare l'utilizzo della CORS
-            // Abilitare il Cross-Origin, cioè accettare anche chiamate
-            // che arrivano da origini diverse
-            services.AddCors(); // Vado ad aggiungere CORS ai services
-            //services.AddSingleton<ScaffoldingCharacterService>();
+
             services.AddControllers();
+            services.AddSingleton<PokemonTypesDao>();
+            services.AddSingleton<MovesDao>();
+            services.AddSingleton<GenerationsDao>();
+            services.AddSingleton<PokemonDao>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +41,8 @@ namespace _06___HunterxHunterAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "_10._1___PokemonAPIv3 v1"));
             }
 
             app.UseHttpsRedirection();
@@ -47,17 +50,6 @@ namespace _06___HunterxHunterAPI
             app.UseRouting();
 
             app.UseAuthorization();
-
-            // Devo anche configurare da questa parte la CORS
-            // Dicendo cosa accettare
-            app.UseCors(
-                options => options.AllowAnyOrigin()
-                                  .AllowAnyMethod()
-                                  .AllowAnyHeader()
-            ); // Questa configurazione è abbastanza brutale
-            // è permette l'accesso praticamente da qualsiasi origina
-            // che utilizza qualsiasi metodo HTTP (GET/POST/PUT/DELETE)
-            // Qualsiasi Header (Metadata delle chiamate)
 
             app.UseEndpoints(endpoints =>
             {

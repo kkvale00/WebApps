@@ -3,7 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>_06___HunterxHunterAPI</RootNamespace>
+    <UserSecretsId>9eb480c5-3583-4b34-af6a-33fbec2c1e8d</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.14" />
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Utility">

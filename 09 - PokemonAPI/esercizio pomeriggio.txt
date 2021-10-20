@@ -1,0 +1,121 @@
+Versione 1.
+Creare un'api per la gestione del Pokédex
+Di ogni pokémon teniamo le seguenti informazioni:
+- Id, Tipo, Nome, Peso
+Fornire attraverso un Controller REST la gestione dei pokémon.
+BONUS:
+- Fornire ricerca per tipo (Tutti i pokemon di un determinato tipo)
+- Ricerca tra due intervalli di Peso, dato pesoMin e pesoMax
+  trovare tutti i pokémon che hanno un peso compreso tra
+  i due valori
+
+Versione 2.
+Come per la prima, ma cambia il modello:
+Id, Tipi (un pokémon può potenzialmente avere due tipi, deve essere un array/list), Nome, Peso
+Se usate i database dovete ragionare con i database...
+2a) Usare una singola colonna dove salvate il tipo e slittate
+/ *2b) Gestire le tipologie dei pokémon in una tabella a parte.
+Voglio avere una relazione N a N tra pokémon e tipi
+Una tabella tipi con tutti i tipi dei pokémon possibili
+Una tabella pokémon con le informazioni "piatte"
+Una terza tabella dove vado ad associare un pokémon con un determinato
+tipo */
+Far in modo di controllare che ad un pokémon sia assegnato al massimo
+2 tipologie
+
+Versione 3
+Questa versione dovrà gestire i dati in modo più complesso i dati.
+Ci saranno diverse classi modello:
+Pokémon:
+- Id: int
+- Nome: string
+- Peso: double
+- Generazione: Generazione
+- Tipi: Tipo[] (*)
+- Mosse: Mossa[] (*2)
+
+Tipo:
+- Id: int
+- Tipo: string
+
+Mossa:
+- Id: int
+- Nome: string
+- Tipo: string
+- Potenza: int
+- EffettiSpeciali: string
+
+Generazione:
+- Id: int
+- Generazione: int
+
+In pratica dovete avere delle tabelle dove salvare i dati "atomici"
+
+Pokémon:
+id
+nome
+peso
+idGenerazione
+---------------
+Mosse:
+id
+Nome
+Tipo
+Potenza
+EffettiSpeciali
+----------------
+Generazioni:
+id
+Generazione
+----------------
+Tipi:
+id
+Tipo
+================
+tipiPokémon
+id*
+idPokémon
+idTipo
+================
+mossePokémon
+id*
+idPokémon
+idMossa
+
+Creare i seguenti Dao:
+DaoTipi
+- Gestire CRUD dei TIPI
+DaoMosse
+- Gestire CRUD delle MOSSE
+DaoGenerazioni
+- Gestire CRUD delle GENERAZIONI
+DaoPokémon
+- Lista dei pokémon con soltanto i seguenti dati: id, nome, peso, generazione, tipi*
+- Inserire un nuovo pokémon con le seguenti proprietà: nome, peso, generazione, tipi* 
+	(La generazione e tipi dovrebbero già esistere, cioé devo avere l'id delle due informazioni da associare
+	al pokémon)
+- Eliminazione Pokémon
+- Modifica dei seguenti dati: nome, peso, generazione
+- Singolo pkm per ID, ma deve contenere tutte le informazioni: id, nome, peso, generazione, tipi, mosse
+- Associazione di mossa a pokémon: dato due parametri di tipo intero che corrisponderanno agli id del pokémon e della
+	mossa da associargli, inserire nella relativa tabella
+- Dissassociazione di una mossa: dato due parametri rimuovere l'associazione della mossa al pokémon designato
+- Un metodo che dato la generazione(id), trovare tutti i pkm appartenenti ad esso
+
+Definire 3 controller:
+TipiController:
+Fornire REST sui TIPI
+----------------------
+MosseController:
+REST sulle MOSSE
+----------------------
+GenerazioniController:
+REST sulle GEN
+----------------------
+PokemonController:
+REST sui pkm, cercando di sfruttare tutti metodi definiti del dao da utilizzare
+
+	
+
+
+
