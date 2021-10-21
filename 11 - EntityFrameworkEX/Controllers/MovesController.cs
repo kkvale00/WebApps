@@ -44,5 +44,11 @@ namespace _11___EntityFrameworkEX.Controllers
         {
             return _service.DeleteById(id);
         }
+
+        [HttpPut("{id}")]
+        public Moves Update([FromRoute] int id, [FromBody] Moves moves)
+        {
+            return _service.Update(id, moves);
+        }
     }
 }

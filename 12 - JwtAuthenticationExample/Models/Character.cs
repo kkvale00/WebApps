@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace _11___EntityFrameworkEX.Models
+namespace _12___JwtAuthenticationExample.Models
 {
-    public class Moves
+    public class Character
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public int Power { get; set; }
-        public string Description { get; set; }
-        public int SuperheroID { get; set; }
-        //public List<SuperHero> SuperHeroes { get; set; }
+
+
+
     }
 }

@@ -22,6 +22,7 @@ namespace _11___EntityFrameworkEX.Services
             // Restitusico l'oggetto che e stato appena eliminato
         SuperHero DeleteById(int id);
 
+        SuperHero Update(int id, SuperHero superHero);
 
     }
 }

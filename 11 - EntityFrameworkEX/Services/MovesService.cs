@@ -47,5 +47,12 @@ namespace _11___EntityFrameworkEX.Services
             return who;
 
         }
+        public Moves Update(int id, Moves moves)
+        {
+            var update = _dtc.Moveset.Update(moves);
+            _dtc.SaveChanges();
+
+            return update.Entity;
+        }
     }
 }

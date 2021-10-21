@@ -13,5 +13,7 @@ namespace _11___EntityFrameworkEX.Services
 
         Moves AddNew(Moves newMoves);
         Moves DeleteById(int id);
+
+        Moves Update(int id, Moves moves);
     }
 }

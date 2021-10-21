@@ -24,7 +24,6 @@ namespace _11___EntityFrameworkEX.Controllers
         [HttpGet]
         public List<SuperHero> GetAll()
         {
-
             return _service.GetAll(); 
         }
 
@@ -45,6 +44,12 @@ namespace _11___EntityFrameworkEX.Controllers
         public SuperHero Delete([FromRoute] int id)
         {
             return _service.DeleteById(id);
+        }
+
+        [HttpPut("{id}")]
+        public SuperHero Update([FromRoute] int id, [FromBody] SuperHero hero)
+        {
+            return _service.Update(id, hero);
         }
     }
 }

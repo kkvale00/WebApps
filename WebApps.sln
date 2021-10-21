@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10.1 - PokemonAPIv3", "10.1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "002 - Reflection", "002 - Reflection\002 - Reflection.csproj", "{224E3191-E59F-4519-B3DC-AE6E3A7ED896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11 - EntityFrameworkEX", "11 - EntityFrameworkEX\11 - EntityFrameworkEX.csproj", "{10A3A5E0-1893-4E4D-8E81-C80A9ED08F04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11 - EntityFrameworkEX", "11 - EntityFrameworkEX\11 - EntityFrameworkEX.csproj", "{10A3A5E0-1893-4E4D-8E81-C80A9ED08F04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12 - JwtAuthenticationExample", "12 - JwtAuthenticationExample\12 - JwtAuthenticationExample.csproj", "{A284D8BD-4B13-4460-84C4-866D156AEC5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{10A3A5E0-1893-4E4D-8E81-C80A9ED08F04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10A3A5E0-1893-4E4D-8E81-C80A9ED08F04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10A3A5E0-1893-4E4D-8E81-C80A9ED08F04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A284D8BD-4B13-4460-84C4-866D156AEC5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A284D8BD-4B13-4460-84C4-866D156AEC5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A284D8BD-4B13-4460-84C4-866D156AEC5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A284D8BD-4B13-4460-84C4-866D156AEC5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

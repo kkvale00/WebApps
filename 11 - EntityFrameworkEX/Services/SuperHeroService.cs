@@ -62,7 +62,15 @@ namespace _11___EntityFrameworkEX.Services
 
         public SuperHero GetByID(int id)
         {
-            return _ctx.SuperHeroes.FirstOrDefault(hero => hero.Id == id);
+            return _ctx.SuperHeroes.Include(p => p.Moveset).FirstOrDefault(hero => hero.Id == id);
+        }
+
+        public SuperHero Update(int id, SuperHero superHero)
+        {
+            var update = _ctx.SuperHeroes.Update(superHero);
+            _ctx.SaveChanges();
+
+            return update.Entity;
         }
     }
 }
