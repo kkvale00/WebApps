@@ -1,5 +1,6 @@
 using _12___JwtAuthenticationExample.Data;
 using _12___JwtAuthenticationExample.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -9,10 +10,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace _12___JwtAuthenticationExample
@@ -38,6 +41,26 @@ namespace _12___JwtAuthenticationExample
                 );
             services.AddScoped<ICharacterService, CharacterService>();
             services.AddScoped<IAuthService, AuthService>();
+
+            //abilitiamo il controller dell'auteticazione
+            // tramite il token JWT e le sue convenzioni
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(opt =>
+                {
+                    // Conviene esternalizzare la chiave segreta
+                    var secret = "super secret very very long long men pikachu";
+                    // questos ecret e importante per validare il token dell'utente
+                    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
+                    opt.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = key,
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                }
+
+                );
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
