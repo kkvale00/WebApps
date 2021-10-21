@@ -1,5 +1,6 @@
 ﻿using _12___JwtAuthenticationExample.DTOs;
 using _12___JwtAuthenticationExample.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace _12___JwtAuthenticationExample.Controllers
 {
+    [Authorize] // solo coloro che mostrano di essere autenticati posso usare i metodi di questo controller
     [Route("[controller]")]
     [ApiController]
     public class AuthController : ControllerBase

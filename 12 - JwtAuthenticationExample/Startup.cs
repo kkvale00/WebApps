@@ -83,6 +83,10 @@ namespace _12___JwtAuthenticationExample
 
             app.UseRouting();
 
+            //dobbiamo mette SOPRA useautorization
+            // l'utilizoz dell'authentication
+            //in un sitem JWT cont token si deve passare il token nell'header key/value
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
