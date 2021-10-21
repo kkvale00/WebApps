@@ -37,6 +37,8 @@ namespace _12___JwtAuthenticationExample
                         )
                 );
             services.AddScoped<ICharacterService, CharacterService>();
+            services.AddScoped<IAuthService, AuthService>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
