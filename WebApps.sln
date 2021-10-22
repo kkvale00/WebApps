@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "002 - Reflection", "002 - R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11 - EntityFrameworkEX", "11 - EntityFrameworkEX\11 - EntityFrameworkEX.csproj", "{10A3A5E0-1893-4E4D-8E81-C80A9ED08F04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12 - JwtAuthenticationExample", "12 - JwtAuthenticationExample\12 - JwtAuthenticationExample.csproj", "{A284D8BD-4B13-4460-84C4-866D156AEC5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12 - JwtAuthenticationExample", "12 - JwtAuthenticationExample\12 - JwtAuthenticationExample.csproj", "{A284D8BD-4B13-4460-84C4-866D156AEC5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13 - Work", "13 - Work\13 - Work.csproj", "{98C75A5D-F9F3-4B63-AF76-4448BE315F44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{A284D8BD-4B13-4460-84C4-866D156AEC5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A284D8BD-4B13-4460-84C4-866D156AEC5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A284D8BD-4B13-4460-84C4-866D156AEC5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98C75A5D-F9F3-4B63-AF76-4448BE315F44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98C75A5D-F9F3-4B63-AF76-4448BE315F44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98C75A5D-F9F3-4B63-AF76-4448BE315F44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98C75A5D-F9F3-4B63-AF76-4448BE315F44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
